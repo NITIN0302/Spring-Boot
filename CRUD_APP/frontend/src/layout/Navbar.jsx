@@ -2,7 +2,7 @@ import React,{useState} from "react";
 import { Link, Route, Routes } from "react-router-dom";
 
 const Navbar = () => {
-    const [colorId,setcolorId] = useState(1);
+    const [colorId,setcolorId] = useState();
 
     return (
     <div className="bg-custom-bg1 flex flex-wrap justify-between text-white py-4">

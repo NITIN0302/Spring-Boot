@@ -4,7 +4,7 @@ import "./App.css";
 import Home from "./pages/Home";
 import AddUser from "./users/AddUser";
 import EditUsers from "./users/EditUsers";
-import ViewUsers from "./users/ViewUsers";
+import DeleteUsers from "./users/DeleteUsers";
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
           <Route path="/" element={<Home />}></Route>
           <Route path="/Add" element={<AddUser />}></Route>
           <Route path="/Update" element={<EditUsers />}></Route>
-          <Route path="/Delete" element={<ViewUsers />}></Route>
+          <Route path="/Delete" element={<DeleteUsers />}></Route>
         </Routes>
       </div>
     </BrowserRouter>

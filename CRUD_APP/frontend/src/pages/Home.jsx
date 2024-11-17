@@ -22,11 +22,11 @@ const Home = () => {
         <div className="w-[30%] border-black text-blue-500">Email</div>
       </div>
       {users.map((ele) => (
-        <div className="w-[70%] flex flex-wrap justify-around p-2 bg-custom-bg1">
+        <div className="w-[70%] flex flex-wrap justify-around p-2 bg-custom-bg1 overflow-auto ">
           <div className="w-[20%] border-black text-white">{ele.id}</div>
           <div className="w-[25%] border-black text-white">{ele.userName}</div>
           <div className="w-[25%] border-black text-white">{ele.name}</div>
-          <div className="w-[30%] border-black text-white">{ele.email}</div>
+          <div className="w-[30%] border-black text-white overflow-auto">{ele.email}</div>
         </div>
       ))}
     </div>
