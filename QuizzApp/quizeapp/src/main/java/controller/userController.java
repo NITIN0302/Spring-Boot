@@ -15,7 +15,7 @@ public class userController {
     private userRepository userRepository;
 
     @PostMapping("/addQuestion")
-    Question newUser(@RequestBody Question newQuestion) {
+    Question newQuestion(@RequestBody Question newQuestion) {
         return userRepository.save(newQuestion);
     }
 
