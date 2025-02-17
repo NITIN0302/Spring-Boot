@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 
 function App() {
   const [message] = useState("Generate Your Email Reply...");
-  const [changedMessage, setChangedMessage] = useState("");
+  const [replyMessage, setReplyMessage] = useState("");
   const [emailContent,setEmailContent] = useState("");
   const [tone,setTone] = useState("");
 
@@ -18,8 +18,8 @@ function App() {
         "tone": tone
       }),
     });
-    const resultData = await response.json();
-    console.log(resultData);
+    const result = await response.json(); 
+    setReplyMessage(result);
   }
 
   return (
@@ -54,6 +54,7 @@ function App() {
         <div className="h-[40%] w-full flex flex-wrap justify-center">
           <textarea
             id="replyData"
+            value={replyMessage}
             className="w-full border rounded-md border-blue-500 outline-none bg-gray-700 p-2"
             placeholder="Your Resulted Reply..."
             type="text"
