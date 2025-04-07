@@ -1,1 +1,0 @@
-console.log("Email writer extension content loaded");
