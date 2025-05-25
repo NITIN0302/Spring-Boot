@@ -4,22 +4,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.annotation.Order;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AuthorizeHttpRequestsConfigurer;
-import org.springframework.security.config.annotation.web.configurers.HeadersConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.provisioning.JdbcUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
@@ -44,12 +38,12 @@ public class SecurityConfig {
     }
 
     @Bean
-//    @Order(2147483642)
     SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests((requests) -> {
             ((AuthorizeHttpRequestsConfigurer.AuthorizedUrl)requests
                     .requestMatchers("/h2-console/**").permitAll()
-                    .requestMatchers("/api/*").permitAll()
+                    .requestMatchers("/api/**").permitAll()
+                    .requestMatchers("/user/**").permitAll()
                     .anyRequest()).authenticated();
         });
 
@@ -71,26 +65,26 @@ public class SecurityConfig {
         return new JdbcUserDetailsManager(dataSource);
     }
 
-    @Bean
-    public CommandLineRunner initData(UserDetailsService userDetailsService)
-    {
-        return args -> {
-            JdbcUserDetailsManager manager = (JdbcUserDetailsManager) userDetailsService;
-            UserDetails user1 = User.withUsername("user1")
-                    .password(passwordEncoder().encode("system123#"))
-                    .roles("USER")
-                    .build();
-
-            UserDetails admin = User.withUsername("admin")
-                    .password(passwordEncoder().encode("system123#"))
-                    .roles("ADMIN")
-                    .build();
-
-            JdbcUserDetailsManager userdetailsManager = new JdbcUserDetailsManager(dataSource);
-            userdetailsManager.createUser(user1);
-            userdetailsManager.createUser(admin);
-        };
-    }
+//    @Bean
+//    public CommandLineRunner initData(UserDetailsService userDetailsService)
+//    {
+//        return args -> {
+//            JdbcUserDetailsManager manager = (JdbcUserDetailsManager) userDetailsService;
+//            UserDetails user1 = User.withUsername("user1")
+//                    .password(passwordEncoder().encode("system123#"))
+//                    .roles("USER")
+//                    .build();
+//
+//            UserDetails admin = User.withUsername("admin")
+//                    .password(passwordEncoder().encode("system123#"))
+//                    .roles("ADMIN")
+//                    .build();
+//
+//            JdbcUserDetailsManager userdetailsManager = new JdbcUserDetailsManager(dataSource);
+//            userdetailsManager.createUser(user1);
+//            userdetailsManager.createUser(admin);
+//        };
+//    }
 
     @Bean
     public PasswordEncoder passwordEncoder(){

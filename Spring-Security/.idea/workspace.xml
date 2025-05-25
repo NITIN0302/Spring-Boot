@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d28d367c-a741-4485-b9e9-a8e1724f5bfe" name="Changes" comment="" />
+    <list default="true" id="d28d367c-a741-4485-b9e9-a8e1724f5bfe" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/JWTAuth/JWTAuth/src/main/java/com/example/JWTAuth/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JWTAuth/JWTAuth/src/main/java/com/example/JWTAuth/UserInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JWTAuth/JWTAuth/src/main/java/com/example/JWTAuth/WebConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JWTAuth/JWTAuth/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/JWTAuth/JWTAuth/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JWTAuth/JWTAuth/src/main/java/com/example/JWTAuth/DataSourceConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/JWTAuth/JWTAuth/src/main/java/com/example/JWTAuth/DataSourceConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JWTAuth/JWTAuth/src/main/java/com/example/JWTAuth/JwtAuthApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/JWTAuth/JWTAuth/src/main/java/com/example/JWTAuth/JwtAuthApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JWTAuth/JWTAuth/src/main/java/com/example/JWTAuth/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/JWTAuth/JWTAuth/src/main/java/com/example/JWTAuth/SecurityConfig.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,9 +22,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2vgmPODGIpLLJ7ujYqHHbVHYtmJ" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -23,8 +32,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.JwtAuthApplication.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true"
   }
 }]]></component>
